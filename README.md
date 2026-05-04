@@ -4,14 +4,6 @@
 
 A full-stack personalized content dashboard that integrates real-time news, movie recommendations, and social content into a unified, interactive user experience.
 
-## 📸 Screenshots
-- Dashboard view
-- Favorites
-- Dark mode
-
-## 🎥 Demo
-[Watch Demo Video](your-loom-link)
-
 
 
 ## 🔌 API Integration
@@ -43,6 +35,35 @@ This product uses the TMDB API but is not endorsed or certified by TMDB.
 - **Animations**: Framer Motion
 - **Drag & Drop**: @dnd-kit/core
 - **Testing**: Vitest (Unit/Integration) & Cypress (E2E)
+
+## 📂 Project Structure
+
+The codebase is organized using a feature-based architecture within the Next.js App Router paradigm, ensuring strict separation of concerns and high maintainability.
+
+```text
+pgagi-personalized-dashboard/
+├── cypress/               # End-to-End (E2E) testing suite
+│   ├── e2e/               # Cypress test specifications (e.g., dashboard.cy.ts)
+│   └── support/           # Cypress custom commands and configurations
+├── src/
+│   ├── app/               # Next.js 14 App Router (Pages & API Routes)
+│   │   ├── api/           # Serverless API endpoints (News, TMDB, Gemini AI, NextAuth)
+│   │   ├── favorites/     # Favorites page route
+│   │   ├── login/         # Authentication login route
+│   │   ├── settings/      # User preferences and theme settings route
+│   │   └── page.tsx       # Main unified dashboard feed
+│   ├── components/        # Reusable React UI components
+│   │   ├── auth/          # Authentication guards and context providers
+│   │   ├── cards/         # Modular content cards (NewsCard, SocialCard)
+│   │   └── layout/        # Global layout components (Header, Sidebar)
+│   ├── lib/               # Global state management and utility functions
+│   │   ├── features/      # Redux Toolkit slices (news, favorites, user)
+│   │   ├── hooks/         # Custom React hooks (e.g., useDebounce)
+│   │   └── store.ts       # Redux store configuration and LocalStorage middleware
+│   └── __tests__/         # Unit and Integration test files (Vitest)
+├── .env.example           # Example environment variables template
+└── package.json           # Project dependencies and NPM scripts
+```
 
 ## ⚙️ Project Setup & Installation
 
